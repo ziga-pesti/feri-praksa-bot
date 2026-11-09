@@ -34,8 +34,10 @@ jobs:
         run: |
           git config user.name "FERI Praksa Bot"
           git config user.email "bot@feri-praksa.local"
-          if [ -f seen_posts.json ]; then
+          if [ -f seen_posts.json ] && [ -n "$(git status --porcelain seen_posts.json)" ]; then
             git add seen_posts.json
-            git commit -m "chore: posodobi seznam videnih objav [skip ci]" || echo "Brez novih objav"
-            git push || echo "Nič za poslati"
+            git commit -m "chore: posodobi seznam videnih objav [skip ci]"
+            git push origin HEAD:main || echo "Nič za poslati"
+          else
+            echo "Ni novih objav za shranjevanje v git."
           fi

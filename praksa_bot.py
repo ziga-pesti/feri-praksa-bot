@@ -74,6 +74,25 @@ def load_config() -> dict:
     return cfg
 
 
+def init_db():
+    """Inicializira lokalno SQLite bazo podatkov za shranjevanje videnih objav."""
+    try:
+        conn = sqlite3.connect(DB_FILE)
+        c = conn.cursor()
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS seen_posts (
+                post_id TEXT PRIMARY KEY,
+                title TEXT,
+                url TEXT,
+                first_seen_at TEXT
+            )
+        """)
+        conn.commit()
+        conn.close()
+    except Exception as e:
+        log(f"Opozorilo pri inicializaciji SQLite baze: {e}")
+
+
 def load_seen_posts() -> set[str]:
     """Naloži seznam že videnih ID-jev iz seen_posts.json ali SQLite."""
     seen = set()
