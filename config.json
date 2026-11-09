@@ -1,0 +1,21 @@
+{
+  "check_interval_seconds": 120,
+  "email": {
+    "enabled": true,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "smtp_user": "ziga.pesti9@gmail.com",
+    "smtp_password": "",
+    "recipient_email": "ziga.pesti9@gmail.com"
+  },
+  "ntfy_phone_notification": {
+    "enabled": true,
+    "topic": "feri-praksa-ziga-alert",
+    "instructions": "Namesti brezplacno aplikacijo ntfy na telefon in se naroci na to temo (feri-praksa-ziga-alert) za takojzno opozorilo z zvokom."
+  },
+  "telegram": {
+    "enabled": false,
+    "bot_token": "",
+    "chat_id": ""
+  }
+}

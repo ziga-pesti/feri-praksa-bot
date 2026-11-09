@@ -1,0 +1,9 @@
+services:
+  feri-bot:
+    build: .
+    container_name: feri_praksa_bot
+    restart: unless-stopped
+    volumes:
+      - ./praksa_state.db:/app/praksa_state.db
+      - ./bot.log:/app/bot.log
+      - ./config.json:/app/config.json

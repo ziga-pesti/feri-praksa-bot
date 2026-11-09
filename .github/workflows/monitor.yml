@@ -1,0 +1,41 @@
+name: FERI Praksa Monitor
+
+on:
+  schedule:
+    # Teče v oblaku vsakih 10 minut, 24 ur na dan
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Omogoča ročni zagon s klikom na gumb v GitHubu za test
+
+permissions:
+  contents: write
+
+jobs:
+  check-praksa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prenos repozitorija
+        uses: actions/checkout@v4
+
+      - name: Nastavitev Python okolja
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Preveri FERI spletno stran
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_USER: ${{ secrets.SMTP_USER || 'ziga.pesti9@gmail.com' }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL || 'ziga.pesti9@gmail.com' }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || 'feri-praksa-ziga-alert' }}
+        run: |
+          python3 praksa_bot.py --once
+
+      - name: Shrani stanje videnih objav
+        run: |
+          git config user.name "FERI Praksa Bot"
+          git config user.email "bot@feri-praksa.local"
+          if [ -f seen_posts.json ]; then
+            git add seen_posts.json
+            git commit -m "chore: posodobi seznam videnih objav [skip ci]" || echo "Brez novih objav"
+            git push || echo "Nič za poslati"
+          fi

@@ -1,0 +1,25 @@
+name: Test Obveščanja (Ročni zagon)
+
+on:
+  workflow_dispatch: # Omogoča ročni sprožitev testa s klikom na "Run workflow"
+
+jobs:
+  test-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prenos repozitorija
+        uses: actions/checkout@v4
+
+      - name: Nastavitev Python okolja
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Pošlji testno e-pošto in obvestilo na telefon
+        env:
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_USER: ${{ secrets.SMTP_USER || 'ziga.pesti9@gmail.com' }}
+          RECIPIENT_EMAIL: ${{ secrets.RECIPIENT_EMAIL || 'ziga.pesti9@gmail.com' }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC || 'feri-praksa-ziga-alert' }}
+        run: |
+          python3 praksa_bot.py --test-alert

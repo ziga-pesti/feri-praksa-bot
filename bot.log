@@ -1,0 +1,30 @@
+[2026-11-09 12:16:46] Testiram zajemalnik na arhivski strani s preteklimi objavami...
+[2026-11-09 12:16:47] Najdenih 20 objav na arhivski strani!
+[2026-11-09 12:16:47]  -> Post #12418: Praksa v podjetju ELRAD Electronics d.o.o.
+[2026-11-09 12:16:47]  -> Post #12345: Praksa v podjetju Opticum d.o.o.
+[2026-11-09 12:16:47]  -> Post #12344: Praksa v podjetju I.H.S. D.O.O.
+[2026-11-09 12:16:53] Preverjam feri.um.si/praksa/ ...
+[2026-11-09 12:16:54] Stanje: 'Ni obvestil' (stran je še nespremenjena).
+[2026-11-09 12:16:54] Ni novih objav.
+[2026-11-09 12:17:00] Pošiljam testno e-pošto in push obvestilo...
+[2026-11-09 12:17:00] OPOZORILO: V config.json se nisi vpisal svojega Gmail gesla za aplikacije (smtp_password)!
+[2026-11-09 12:17:00] PUSH OBVESTILO POSLANO na telefon preko ntfy.sh/feri-praksa-ziga-alert
+[2026-11-09 12:17:00] Test zaključen. Preveri svoj e-poštni predal in telefon!
+[2026-11-09 12:20:59] Pošiljam testno e-pošto in push obvestilo...
+[2026-11-09 12:21:08] E-POŠTA POSLANA na ziga.pesti9@gmail.com za objavo: TESTNO OBVESTILO - Bot za prakso deluje!
+[2026-11-09 12:21:08] PUSH OBVESTILO POSLANO na telefon preko ntfy.sh/feri-praksa-ziga-alert
+[2026-11-09 12:21:08] Test zaključen. Preveri svoj e-poštni predal in telefon!
+[2026-11-09 12:21:51] Preverjam feri.um.si/praksa/ ...
+[2026-11-09 12:21:53] Stanje: 'Ni obvestil' (stran je še nespremenjena).
+[2026-11-09 12:21:53] Ni novih objav.
+[2026-11-09 12:22:01] FERI Praksa Notifier Bot je ZAGNAN. Interval preverjanja: 120 sekund.
+[2026-11-09 12:22:01] Ciljni URL: https://feri.um.si/praksa/
+[2026-11-09 12:22:01] Preverjam feri.um.si/praksa/ ...
+[2026-11-09 12:22:01] Stanje: 'Ni obvestil' (stran je še nespremenjena).
+[2026-11-09 12:22:02] Ni novih objav.
+[2026-11-09 12:24:02] Preverjam feri.um.si/praksa/ ...
+[2026-11-09 12:24:03] Stanje: 'Ni obvestil' (stran je še nespremenjena).
+[2026-11-09 12:24:03] Ni novih objav.
+[2026-11-09 12:26:03] Preverjam feri.um.si/praksa/ ...
+[2026-11-09 12:26:04] Stanje: 'Ni obvestil' (stran je še nespremenjena).
+[2026-11-09 12:26:05] Ni novih objav.
